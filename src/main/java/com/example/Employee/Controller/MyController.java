@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class MyController {
 
@@ -33,7 +34,7 @@ public class MyController {
         return this.employeeService.getEmployeeByID(id);
     }
 
-    @PostMapping("/addcustomer")
+    @PostMapping("/add/customer")
     public Employee addEmployee(@RequestBody Employee employee) {
         return this.employeeService.addEmployee(employee);
     }

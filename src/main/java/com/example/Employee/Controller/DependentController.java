@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class DependentController {
 
@@ -69,10 +70,11 @@ public class DependentController {
 
     //delete dependent by id
     @DeleteMapping("/dependents/{id}")
-    public ResponseEntity<HttpStatus> deleteDependent(@PathVariable("id") int id) {
+    public  void deleteDependent(@PathVariable("id") int id) {
         dependentRepository.deleteById(id);
 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        //return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        //used to return ResponseEntity<HttpStatus>
     }
 
 
